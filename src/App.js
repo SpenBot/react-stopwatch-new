@@ -1,0 +1,90 @@
+
+//// DEPENDENCIES, MODULES ///////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+import React, { Component } from 'react';
+
+
+
+//// IMPORT COMPONENTS, STYLES ////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+import Stopwatch from './components/Stopwatch/Stopwatch';
+
+import './App.css'
+
+
+
+
+//// COMPONENT CLASS /////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+class App extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      stopwatches: 1
+    }
+  }
+
+
+//// Add Stopwatches //////////////////////////////////////////////////////
+  addSW = () => {
+    this.setState(prevState => ({
+      stopwatches: prevState.stopwatches + 1
+    }))
+  }
+
+//// Sub Stopwatches //////////////////////////////////////////////////////
+  subSW = () => {
+    this.setState(prevState => ({
+      stopwatches: prevState.stopwatches - 1
+    }))
+  }
+
+
+//// RENDER //////////////////////////////////////////////////////////////
+  render() {
+
+    let stopwatches = []
+
+    for (let i = 0; i < this.state.stopwatches; i++) {
+      stopwatches.push(<Stopwatch key={i}/>)
+    }
+
+
+
+//// RETURN //////////////////////////////////////////////////////////////
+    return (
+      <div className="App">
+
+        <div className="addSubContainer">
+        <div className="addTimerButton" onClick={this.addSW}>+</div>
+        {this.state.stopwatches > 1 &&
+          <div className="addTimerButton" onClick={this.subSW}>-</div>}
+        </div>
+
+        <div className="stopwatchesContainer">
+          {stopwatches}
+        </div>
+      </div>
+    );
+  }
+}
+
+
+
+
+
+
+//// EXPORT COMPONENT ////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+export default App;
+
+
+
+
+
+// END ///////////////////////////////////////////////////////////////////

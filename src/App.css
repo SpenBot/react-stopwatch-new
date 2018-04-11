@@ -1,0 +1,41 @@
+
+.stopwatchesContainer {
+  width: 800px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+.addSubContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.addTimerButton {
+  margin: 40px 0 0 13px;
+  height: 50px;
+  width: 50px;
+
+  background-color: rgb(25, 25, 25);
+  border: solid 5px yellow;
+  border-radius: 15px;
+
+  color: yellow;
+  font-size: 30px;
+  line-height: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.addTimerButton:hover {
+  background-Color: yellow;
+  cursor: pointer;
+  color: rgb(25, 25, 25);
+}
